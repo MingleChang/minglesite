@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+
+{%block title%}  
+主页
+{%endblock%}
+
+{%block body%}  
+{%for blog in blog_list%}
+<p>{{blog.title}}</p>
+<p>
+{%for sign in blog.signs.all%}
+{{sign.title}}
+{%endfor%}
+</p>
+{%endfor%}
+{%endblock%}
