@@ -17,15 +17,23 @@
         <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
         <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
         <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/base.css' %}" />
         {%block link%}  
         {%endblock%}  
     </head>
     <body>
         {% include "blog/head.html" %}
-    	<div class="container">
-    	{%block content%}  
-        {%endblock%} 
+    	<div class="container" id="blog-content">
+            <div class="row">
+                <div class="col-xs-2 hidden-xs hidden-sm">
+                    {% include "blog/intro.html" %}
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-10">
+                {%block content%}  
+                {%endblock%} 
+                </div>
+            </div>
     	</div>
     </body>
 </html>

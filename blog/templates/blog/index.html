@@ -1,16 +1,21 @@
 {% extends "blog/base.html" %}
 
 {%block title%}  
-主页
+MingleChang
 {%endblock%}
 
+{%block link%}  
+
+{%endblock%}  
 {%block content%}  
-{%for blog in blog_list%}
-<p>{{blog.title}}</p>
-<p>
-{%for sign in blog.signs.all%}
-{{sign.title}}
-{%endfor%}
-</p>
-{%endfor%}
+<ul class="list-unstyled">
+	{%for blog in blog_list%}
+     	<li>
+        <a href={% url 'blog:detail' blog.id %}>
+          <h4 class="list-group-item-heading">{{blog.title}}</h4>
+          <p class="list-group-item-text">{{blog.pub_date}}</p>
+        </a>
+    	</li>
+    {%endfor%}
+</ul>
 {%endblock%}
