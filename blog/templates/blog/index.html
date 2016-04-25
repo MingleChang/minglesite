@@ -4,15 +4,16 @@
 MingleChang
 {%endblock%}
 
-{%block link%}  
-
+{%block link%} 
+{% load staticfiles %} 
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/index.css' %}" />
 {%endblock%}  
 {%block content%}  
 <ul class="list-unstyled">
 	{%for blog in blog_list%}
      	<li>
         <a href={% url 'blog:detail' blog.id %}>
-          <h4 class="list-group-item-heading">{{blog.title}}</h4>
+          <p id="blog_title" class="list-group-item-heading">{{blog.title}}</p>
           <p class="list-group-item-text">{{blog.pub_date}}</p>
         </a>
     	</li>
