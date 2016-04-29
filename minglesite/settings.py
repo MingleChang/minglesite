@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'minglesite',
         'USER':'root',
         'PASSWORD':'890805',
-        'HOST':'128.199.173.244',
+        'HOST':'127.0.0.1',
         'PORT':'3306',
     }
 }
