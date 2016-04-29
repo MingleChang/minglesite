@@ -12,10 +12,12 @@ MingleChang
 <ul class="list-unstyled">
 	{%for blog in blog_list%}
      	<li>
-        <a href={% url 'blog:detail' blog.id %}>
-          <p id="blog_title" class="list-group-item-heading">{{blog.title}}</p>
-          <p class="list-group-item-text">{{blog.pub_date}}</p>
-        </a>
+        <a class="blog_title" href={% url 'blog:detail' blog.id %}>{{blog.title}}</a>
+        </br>
+        {% for sign in blog.signs.all %}
+        <span class="blog_sign">{{sign.title}}</span>
+        {%endfor%}
+        <span class="blog_date">{{blog.pub_date}}</span>
     	</li>
     {%endfor%}
 </ul>

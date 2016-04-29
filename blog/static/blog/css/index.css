@@ -1,4 +1,22 @@
 #blog_title{
+	
+}
+a.blog_title{
 	font-size:44px;
 	color:#555555;
+	font-family: Georgia, serif;
+	TEXT-DECORATION:none;
+}
+span.blog_sign{
+	background-color: #ff0000;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-radius: 4px;
+	color: #ffffff;
+}
+span.blog_date{
+	float:right;
+	color: #ff00ff;
 }
