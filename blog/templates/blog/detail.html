@@ -9,5 +9,9 @@
 {%endblock%} 
 
 {%block content%} 
-{{ blog.content }}
+<div id="markdown">{{ blog.content }}</div>
+<script type="text/javascript">
+	content=document.getElementById("markdown")
+	content.innerHTML=markdown.toHTML(content.innerHTML)
+</script>
 {%endblock%}
