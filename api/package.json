@@ -4,8 +4,15 @@
   "description": "restfull api",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/WWW"
   },
   "author": "Mingle Chang",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "multer": "^1.3.0",
+    "express-session": "^1.15.2"
+  }
 }
