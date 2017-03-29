@@ -26,4 +26,16 @@ app.use(session({
 
 app.use('/tools', tools);
 
+//404
+app.use(function(req, res, next) {
+  	let err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+})
+//error
+app.use(function(err, req, res, next) {
+  	let info = global.funcs.jsonInfo(err.status || 500, err.message);
+	res.send(info);
+})
+
 module.exports = app;

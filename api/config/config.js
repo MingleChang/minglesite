@@ -6,6 +6,10 @@ const config = {
 
 	//端口
 	port: 8000,
-}
+
+
+	//ip查询接口,查询ip的相关信息
+	ip_query_address: 'http://ip.taobao.com/service/getIpInfo.php?ip=',
+};
 
 module.exports = config;
