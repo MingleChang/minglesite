@@ -14,6 +14,8 @@ global.funcs = require('./config/function');
 
 let app = express();
 
+app.set('trust proxy', 'loopback');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
