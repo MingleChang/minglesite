@@ -15,7 +15,7 @@ router.get('/receive', function(req, res, next) {
 	var param = "";
 	for (var key in req.query) {
 		if (param == "") {
-			param = param + key + '=' + req.query[key];
+			param = '?' + key + '=' + req.query[key];
 		} else {
 			param = param + '&' + key + '=' + req.query[key];
 		}
