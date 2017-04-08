@@ -5,7 +5,7 @@ const config = {
 	session_secret: 'minglechang',
 
 	//端口
-	port: 8000,
+	port: 8001,
 
 
 	//ip查询接口,查询ip的相关信息

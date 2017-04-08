@@ -4,8 +4,9 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const multer  = require('multer');
 const path = require('path');
+const ejs = require('ejs');
 
-const tools = require('./routes/tools');
+const udid = require('./routes/udid');
 
 //定义全局变量
 global.config = require('./config/config');
@@ -16,6 +17,11 @@ let app = express();
 
 app.set('trust proxy', 'loopback');
 
+app.set('views', path.join(__dirname, 'views'))
+app.engine('.html', ejs.__express)
+app.set('view engine', 'html')
+
+app.use(express.static(path.join(__dirname,'/statics')))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -26,11 +32,9 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use('/tools', tools);
+app.use('/udid', udid);
 
-//404
-app.use(global.funcs.json404);
-//502
-app.use(global.funcs.json502);
+app.use(global.funcs.page404);
+app.use(global.funcs.page502);
 
 module.exports = app;
