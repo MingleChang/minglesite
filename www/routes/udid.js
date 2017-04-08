@@ -20,7 +20,7 @@ router.get('/receive', function(req, res, next) {
 			param = param + '&' + key + '=' + req.query[key];
 		}
 	}
-	res.redirect(301, '/udid/result?' + param);
+	res.redirect(301, '/udid/result' + param);
 })
 
 router.get('/result', function(req, res, next) {
