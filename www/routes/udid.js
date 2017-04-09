@@ -11,7 +11,7 @@ router.get('/get', function(req, res, next) {
 	res.download(filePath, 'udid.mobileconfig');
 })
 
-router.get('/receive', function(req, res, next) {
+router.post('/receive', function(req, res, next) {
 	console.log(req.body);
 	var param = "";
 	for (var key in req.query) {
