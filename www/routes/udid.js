@@ -12,6 +12,7 @@ router.get('/get', function(req, res, next) {
 })
 
 router.get('/receive', function(req, res, next) {
+	console.log(req.body);
 	var param = "";
 	for (var key in req.query) {
 		if (param == "") {
