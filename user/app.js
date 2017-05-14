@@ -5,7 +5,6 @@ const session = require('express-session');
 const multer  = require('multer');
 const path = require('path');
 
-const account = require('./routes/account');
 const user = require('./routes/user');
 
 //定义全局变量
@@ -27,7 +26,6 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use('/account', account);
 app.use('/user', user);
 
 //404

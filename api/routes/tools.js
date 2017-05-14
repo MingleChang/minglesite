@@ -17,8 +17,7 @@ router.get('/ip', function(req, res, next) {
 			let info = global.funcs.jsonInfo(200, "成功", jsonObject.data);
 			res.send(info);
 		} else {
-			let info = global.funcs.jsonInfo(500, jsonObject.data);
-			res.send(info); 
+			next(err);
 		}
 	});
 });
