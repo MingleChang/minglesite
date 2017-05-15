@@ -1,11 +1,19 @@
-var fs        = require("fs");
-var path      = require("path");
-var Sequelize = require("sequelize");
+const fs        = require("fs");
+const path      = require("path");
+const Sequelize = require("sequelize");
+const db_config = require('../config/db_config');
+if (db_config.debug) {
+  let config = db_config.sqlite_config;
+  let database = config.database;
+  var sequelize = new Sequelize(database, null, null, config);
+}else {
+  let config = db_config.mysql_config;
+  let database = config.database;
+  let username = config.username;
+  let password = config.password;
+  var sequelize = new Sequelize(database, username, password, config);
+}
 
-var sequelize = new Sequelize('test', null, null, {
-    dialect: 'sqlite',
-    storage: 'test.db'
-});
 var db        = {};
 
 fs

@@ -14,7 +14,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     password: {
       type: DataTypes.STRING,
-      comment: '密码'
+      comment: '密码',
+      get() {
+        return '******'
+      }
     },
     avatar: {
       type: DataTypes.STRING,
@@ -82,7 +85,16 @@ module.exports = function(sequelize, DataTypes) {
     registerSource: {
       type: DataTypes.ENUM,
       values: ['Web', 'iOS', 'Android'],
-      comment: '注册源'
+      comment: '注册源',
+      // validate: {
+      //   isValidate(value) {
+      //     if (value != 'Web' && value != 'iOS' && value != 'Android') {
+      //       let err = new Error('registerSource传入参数错误');
+      //       err.status = 1001;
+      //       throw err;
+      //     }
+      //   }
+      // }
     },
     registerMethod: {
       type: DataTypes.ENUM,
