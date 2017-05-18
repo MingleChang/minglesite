@@ -85,16 +85,7 @@ module.exports = function(sequelize, DataTypes) {
     registerSource: {
       type: DataTypes.ENUM,
       values: ['Web', 'iOS', 'Android'],
-      comment: '注册源',
-      // validate: {
-      //   isValidate(value) {
-      //     if (value != 'Web' && value != 'iOS' && value != 'Android') {
-      //       let err = new Error('registerSource传入参数错误');
-      //       err.status = 1001;
-      //       throw err;
-      //     }
-      //   }
-      // }
+      comment: '注册源'
     },
     registerMethod: {
       type: DataTypes.ENUM,
