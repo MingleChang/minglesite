@@ -14,12 +14,39 @@ const check = {
 				userName: str
 			}
 		}).then(function(result){
-			callback(result > 0);
+			callback(result > 0, null);
 		}).catch(function(err){
 			console.log(err);
-			callback(true);
+			callback(false,err);
 		});
-	}
+	},
+	//检查手机号是否已使用
+	isExistUserPhone: function (str, callback){
+		user.count({
+			where: {
+				phone: str
+			}
+		}).then(function(result){
+			callback(result > 0, null);
+		}).catch(function(err){
+			console.log(err);
+			callback(false,err);
+		});
+	},
+	//检查邮箱号是否已使用
+	isExistUserEmail: function (str, callback){
+		user.count({
+			where: {
+				email: str
+			}
+		}).then(function(result){
+			callback(result > 0, null);
+		}).catch(function(err){
+			console.log(err);
+			callback(false,err);
+		});
+	},
+
 
 };
 

@@ -21,8 +21,12 @@ function userCreate(req, res, next) {
 		next(err);
 		return;
 	}
-	check.isExistUserName(userName, function(result) {
-		if (result) {
+	check.isExistUserName(userName, function(result, error) {
+		if(error) {
+			next(error);
+			return;
+		}
+		else if (result) {
 			let err = new Error('userName已存在');
 			err.status = 1002;
 			next(err);

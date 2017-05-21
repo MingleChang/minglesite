@@ -84,8 +84,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     registerSource: {
       type: DataTypes.ENUM,
-      values: ['Web', 'iOS', 'Android'],
-      comment: '注册源'
+      values: ['PC', 'iOS', 'Android'],
+      comment: '注册源(PC,iOS,Android)'
     },
     registerMethod: {
       type: DataTypes.ENUM,
