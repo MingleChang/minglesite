@@ -21,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.engine('.html', ejs.__express)
 app.set('view engine', 'html')
 
-app.use(express.static(path.join(__dirname,'/statics')))
+app.use('/public', express.static(path.join(__dirname,'/statics')))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());

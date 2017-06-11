@@ -6,6 +6,7 @@ const multer  = require('multer');
 const path = require('path');
 
 const user = require('./routes/user');
+const push = require('./routes/push');
 
 //定义全局变量
 global.config = require('./config/config');
@@ -16,6 +17,7 @@ let app = express();
 
 app.set('trust proxy', 'loopback');
 
+app.use('/public',express.static(path.join(__dirname,'/statics')))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -27,6 +29,7 @@ app.use(session({
 }));
 
 app.use('/user', user);
+app.use('/push', push);
 
 //404
 app.use(global.funcs.json404);
