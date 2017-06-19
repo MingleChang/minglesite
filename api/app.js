@@ -6,6 +6,7 @@ const multer  = require('multer');
 const path = require('path');
 
 const tools = require('./routes/tools');
+const test = require('./routes/test');
 
 //定义全局变量
 global.config = require('./config/config');
@@ -27,6 +28,7 @@ app.use(session({
 }));
 
 app.use('/tools', tools);
+app.use('/test', test);
 
 //404
 app.use(global.funcs.json404);
