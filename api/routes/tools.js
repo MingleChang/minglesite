@@ -1,10 +1,8 @@
 const express = require('express');
+const router = express.Router();
 
 const getIp = require('../controllers/tools/getIp');
 const getDatetime = require('../controllers/tools/getDatetime');
-
-const request = require('request');
-const router = express.Router();
 
 router.get('/ip', function(req, res, next) {
 	getIp(req, res, next);
