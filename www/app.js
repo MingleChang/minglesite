@@ -6,6 +6,7 @@ const multer  = require('multer');
 const path = require('path');
 const ejs = require('ejs');
 
+const index = require('./routes/index');
 const udid = require('./routes/udid');
 
 //定义全局变量
@@ -32,6 +33,8 @@ app.use(session({
   saveUninitialized: true
 }));
 
+
+app.use('/', index);
 app.use('/udid', udid);
 
 app.use(global.funcs.page404);
