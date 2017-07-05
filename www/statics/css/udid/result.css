@@ -1,0 +1,58 @@
+#headBg {
+	background-color: #e0e0e0;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#headTitle {
+	font-size: 30px;
+	color: #333333;
+}
+
+#introBg {
+	text-align:center;
+	margin:0 auto;
+	border-color:#e0e0e0;
+	border-width:1px;
+	border-style:solid;
+	border-radius:10px;
+	margin-top:10px;
+	padding:10px;
+	max-width:700px;
+}
+
+#introDeviceName {
+	font-size:30px;
+	color: #333333;
+	margin-top:10px;
+	margin-bottom:10px
+}
+
+#introDeviceContent {
+	font-size:30px;
+	color: #333333;
+	margin-top:10px;
+	margin-bottom:10px
+}
+
+#introUDIDName {
+	font-size:30px;
+	color: #333333;
+	margin-top:10px;
+	margin-bottom:10px
+}
+
+#introUDIDContent {
+	font-size:15px;
+	color: #333333;
+	margin-top:10px;
+	margin-bottom:10px
+}
+
+#udidIntro {
+	font-size:12px;
+	color:#999999;
+	margin-top:10px;
+	margin-bottom:10px;
+	max-width:500px;
+}

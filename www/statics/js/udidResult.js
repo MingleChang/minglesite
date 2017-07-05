@@ -8,4 +8,7 @@ app.config(['$locationProvider', function($locationProvider) {
 app.controller('udidResult', function($scope, $location) {
     $scope.device =$location.search().PRODUCT;
     $scope.udid =$location.search().UDID;
+    $scope.copyClick = function () {
+    	alert($scope.udid);
+    }
 }); 
