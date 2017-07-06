@@ -10,6 +10,9 @@ app.controller('result', function($scope, $location) {
     $scope.imei = $location.search().IMEI;
     $scope.version = $location.search().VERSION;
     $scope.udid = $location.search().UDID;
+    // if (! $scope.udid) {
+    //     $location.path("/udid");
+    // }
     $scope.copyClick = function () {
     	alert($scope.udid);
     }
