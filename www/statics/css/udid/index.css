@@ -9,7 +9,7 @@
 	color: #333333;
 }
 
-#introBg {
+#infoBg {
 	text-align:center;
 	margin:0 auto;
 	border-color:#e0e0e0;
@@ -21,18 +21,22 @@
 	max-width:700px;
 }
 
-#introDeviceName,#introIMEIName,#introVersionName,#introUDIDName {
-	font-size:30px;
-	color: #333333;
-	margin-top:10px;
-	margin-bottom:10px;
+#hint {
+	font-size: 14px;
+	color: #999999;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
-#introDeviceContent,#introIMEIContent,#introVersionContent,#introUDIDContent {
-	font-size:15px;
-	color: #333333;
-	margin-top:10px;
-	margin-bottom:10px;
+#udidButton {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#qrImg {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #udidIntro {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" ng-app="udidResult">
+<html lang="zh-CN" ng-app="result">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,9 +16,10 @@
 
     <link rel="stylesheet" href="/public/css/common.css">
     <link rel="stylesheet" href="/public/css/udid/result.css">
-    <script src="/public/js/udidResult.js"></script>
+
+    <script src="/public/js/udid/result.js"></script>
 </head>
-<body ng-controller="udidResult">
+<body ng-controller="result">
   <div ng-include="'/public/html/header.html'"></div> 
 
   <div id="headBg">
@@ -29,6 +30,10 @@
   <div id="introBg">
     <div id="introDeviceName">设备名</div>
     <div id="introDeviceContent">{{device}}</div>
+    <div id="introIMEIName">IMEI</div>
+    <div id="introIMEIContent">{{imei}}</div>
+    <div id="introVersionName">version</div>
+    <div id="introVersionContent">{{version}}</div>
     <div id="introUDIDName">UDID</div>
     <div id="introUDIDContent">{{udid}}</div>
 <!--     <a class="btn btn-primary" type="button" ng-click="copyClick()">复制UDID</a> -->
@@ -38,6 +43,8 @@
   <div id="udidIntro" class="container">
     UDID 是一种 iOS 设备的特殊识别码。除序号之外，每台 iOS 装置都另有一组独一无二的号码，我们就称之为识别码（ Unique Device Identifier, UDID ）。就像我们的身份证一样。开发者需要知道你的 UDID，才可以让你的手机安装访问测试中的应用，就像需要你的身份证才可以让你登机一样 :)
   </div>
+
+  <div ng-include="'/public/html/footer.html'"></div> 
 
 </body>
 </html>
