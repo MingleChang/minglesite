@@ -29,9 +29,14 @@
 	margin-bottom: 20px;
 }
 
-#udidButton {
+#udidButtonBg {
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+#udidButton {
+	color: white;
+	background-color: #7AB8CC;
 }
 
 #qrImg {
