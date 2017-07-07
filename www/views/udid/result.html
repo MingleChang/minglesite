@@ -13,6 +13,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 
     <link rel="stylesheet" href="/public/css/common.css">
     <link rel="stylesheet" href="/public/css/udid/result.css">
@@ -35,8 +36,9 @@
     <div id="introVersionName">version</div>
     <div id="introVersionContent">{{version}}</div>
     <div id="introUDIDName">UDID</div>
+    <!-- <textarea class="form-control">{{udid}}</textarea> -->
     <div id="introUDIDContent">{{udid}}</div>
-    <!-- <a id="copyButton" class="btn" type="button" ng-click="copyClick()">复制UDID</a> -->
+    <a id="copyButton" class="btn" type="button" ng-click="copyClick()" data-clipboard-target="#introUDIDContent">复制UDID</a>
   </div>
   </div>
 

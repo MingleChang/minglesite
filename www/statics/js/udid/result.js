@@ -14,7 +14,16 @@ app.controller('result', function($scope, $location) {
         window.location.href = '/udid';
         // $location.path("/udid");
     }
-    // $scope.copyClick = function () {
-    // 	alert($scope.udid);
-    // }
+    $scope.copyClick = function () {
+    	// alert($scope.udid);
+        var clipboard = new Clipboard('#copyButton');
+        clipboard.on('success', function(e) {
+            alert('复制成功!')
+            e.clearSelection();
+        });
+        clipboard.on('error', function(e) {
+            alert('请选择“拷贝”进行复制!')
+        });
+    }
 }); 
+
