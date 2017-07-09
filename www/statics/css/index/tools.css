@@ -1,0 +1,21 @@
+#headBg {
+	background-color: #7AB8CC;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#headTitle {
+	font-size: 30px;
+	color: white;
+}
+
+#toolItem {
+	text-align: center;
+	margin-top: 10px;
+	height:0px;
+	padding-top: 10%;
+	padding-bottom:20%;
+	border-radius: 3px;
+	box-shadow: 0 0 3px #999999; 
+	width: 100%;
+}
