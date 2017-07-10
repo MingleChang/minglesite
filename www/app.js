@@ -7,6 +7,7 @@ const path = require('path');
 const ejs = require('ejs');
 
 const index = require('./routes/index');
+const tools = require('./routes/tools');
 const udid = require('./routes/udid');
 
 //定义全局变量
@@ -35,6 +36,7 @@ app.use(session({
 
 
 app.use('/', index);
+app.use('/tools', tools);
 app.use('/udid', udid);
 
 app.use(global.funcs.page404);

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  ng-app="hashEncrypt">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MingleChang</title>
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <link rel="stylesheet" href="/public/css/common.css">
+    <link rel="stylesheet" href="/public/css/tools/hashEncrypt.css">
+
+
+    <script src="/public/js/tools/hashEncrypt.js"></script>
+
+</head>
+<body ng-controller="hashEncrypt">
+    <div ng-include="'/public/html/header.html'"></div>
+
+    <div id="headBg">
+        <div id="headTitle" class="container">工具 - 哈希/散列</div>
+    </div>
+
+    <div class="container">
+        <div id="textBg" class="row">
+        <div  class="col-xs-12 col-sm-6">
+            <div>明文</div>
+            <textarea id="sourceText" placeholder="this is sample">{{sourceText}}</textarea> 
+        </div> 
+        <div  class="col-xs-12 col-sm-6">
+            <div>哈希值</div>
+            <textarea id="encryptText">{{encryptText}}</textarea>
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="buttonBg" class="row">
+            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                <a id="encryptButton" class="btn" type="button" ng-click="buttonMD5()">MD5</a>
+            </div>
+
+            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA1()">SHA1</a>
+            </div>
+
+            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA224()">SHA224</a>
+            </div>
+
+            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA256()">SHA256</a>
+            </div>
+
+            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA384()">SHA384</a>
+            </div>
+
+            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA512()">SHA512</a>
+            </div>
+        </div>
+        
+    </div>
+
+  <div ng-include="'/public/html/footer.html'"></div> 
+
+</body>
+</html>
