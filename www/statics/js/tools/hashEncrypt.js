@@ -16,30 +16,43 @@ app.config(['$locationProvider', function($locationProvider) {
 // }]);
 app.controller('hashEncrypt', function($http,$scope) {
 	$scope.buttonMD5 = function () {
-		alert("buttonMD5");
-		$http.get('http://api.minglechang.com/tools/ip'
-            ).then(
-            	function successCallback(response) {
-            		alert("success " + response.data.message);
-  				}, 
-  				function errorCallback(response) {
-					alert("error " + response.status);
-  				}
-  			);
+		encrypt($scope.sourceText, 'md5');
 	}
 	$scope.buttonSHA1 = function () {
-		alert("buttonSHA1");
+		encrypt($scope.sourceText, 'sha1');
 	}
 	$scope.buttonSHA224 = function () {
-		alert("buttonSHA224");
+		encrypt($scope.sourceText, 'sha224');
 	}
 	$scope.buttonSHA256 = function () {
-		alert("buttonSHA256");
+		encrypt($scope.sourceText, 'sha256');
 	}
 	$scope.buttonSHA384 = function () {
-		alert("buttonSHA384");
+		encrypt($scope.sourceText, 'sha384');
 	}
 	$scope.buttonSHA512 = function () {
-		alert("buttonSHA512");
+		encrypt($scope.sourceText, 'sha512');
+	}
+
+	function encrypt(source,method,password) {
+		var url = "http://api.minglechang.com/tools/hashEncrypt";
+		url = url + '?source=' + source;
+		url = url + '&method=' + method;
+		if (password) {
+			url = url + '&password=' + password;
+		}
+		$http.get(url
+            ).then(
+            	function successCallback(response) {
+            		if (response.data.code == 200) {
+            			$scope.encryptText = response.data.result.result;
+            		}else {
+            			alert("服务器异常");
+            		}
+  				}, 
+  				function errorCallback(response) {
+					alert("服务器异常");
+  				}
+  			);
 	}
 });
