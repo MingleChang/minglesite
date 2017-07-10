@@ -35,6 +35,10 @@ app.controller('hashEncrypt', function($http,$scope) {
 	}
 
 	function encrypt(source,method,password) {
+		if (!source) {
+			alert("请输入明文");
+			return;
+		}
 		var url = "http://api.minglechang.com/tools/hashEncrypt";
 		url = url + '?source=' + source;
 		url = url + '&method=' + method;
