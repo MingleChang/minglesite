@@ -25,46 +25,28 @@
     <div ng-include="'/public/html/header.html'"></div>
 
     <div id="headBg">
-        <div id="headTitle" class="container">工具 - 哈希/散列</div>
+        <div id="headTitle" class="container">工具 - 散列/哈希</div>
     </div>
 
     <div class="container">
         <div id="textBg" class="row">
         <div  class="col-xs-12 col-sm-6">
             <div>明文</div>
-            <textarea id="sourceText" placeholder="this is sample" ng-model="sourceText"></textarea> 
+            <textarea id="sourceText" placeholder="请输入要加密的字符串" ng-model="sourceText"></textarea> 
         </div> 
         <div  class="col-xs-12 col-sm-6">
             <div>哈希值</div>
-            <textarea id="encryptText" ng-model="encryptText"></textarea>
+            <textarea id="encryptText" placeholder="加密后的字符串" ng-model="encryptText"></textarea>
         </div>
         </div>
     </div>
-
+    <div class="container" ng-show="visible">
+        <span>密码：</span><input ng-model='password'>
+    </div>
     <div class="container">
         <div id="buttonBg" class="row">
-            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
-                <a id="encryptButton" class="btn" type="button" ng-click="buttonMD5()">MD5</a>
-            </div>
-
-            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
-                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA1()">SHA1</a>
-            </div>
-
-            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
-                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA224()">SHA224</a>
-            </div>
-
-            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
-                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA256()">SHA256</a>
-            </div>
-
-            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
-                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA384()">SHA384</a>
-            </div>
-
-            <div id="encryptButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
-                <a id="encryptButton" class="btn" type="button" ng-click="buttonSHA512()">SHA512</a>
+            <div id="encryptButtonDiv" ng-repeat="encrypt in encrypts" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                <a id="encryptButton" class="btn" type="button" ng-click="buttonClick(encrypt)">{{encrypt.name}}</a>
             </div>
         </div>
         
