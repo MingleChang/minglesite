@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN"  ng-app>
+<html lang="zh-CN"  ng-app="base64">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="/public/css/common.css">
     <link rel="stylesheet" href="/public/css/tools/base64.css">
 
+    <script src="/public/js/tools/base64.js"></script>
+
 </head>
-<body>
+<body ng-controller="base64">
     <div ng-include="'/public/html/header.html'"></div>
 
     <div id="headBg">
@@ -26,12 +28,24 @@
     </div>
     <!-- 输入框 -->
     <div class="container">
-        <div class="row">
+        <div id="textBg" class="row">
             <div class="col-xs-12 col-sm-6">
                 <textarea id="sourceText" placeholder="Base64加密内容粘贴在这里" ng-model="sourceText"></textarea> 
             </div>
             <div class="col-xs-12 col-sm-6">
                 <textarea id="encryptText" placeholder="Base64解密内容粘贴在这里" ng-model="encryptText"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div id="buttonDiv" class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                <a id="button" class="btn" type="button" ng-click="encrypt()">Base64加密</a>
+            </div>
+
+            <div id="buttonDiv" class="col-xs-4 col-sm-3 col-md-2 col-lg-2">
+                <a id="button" class="btn" type="button" ng-click="decrypted()">Base64解密</a>
             </div>
         </div>
     </div>

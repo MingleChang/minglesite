@@ -53,8 +53,7 @@ app.controller('hashEncrypt', function($http,$scope) {
 		if (password != undefined) {
 			url = url + '&password=' + password;
 		}
-		$http.get(url
-            ).then(
+		$http.get(url).then(
             	function successCallback(response) {
             		if (response.data.code == 200) {
             			$scope.encryptText = response.data.result.result;

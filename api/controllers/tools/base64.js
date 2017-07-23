@@ -21,14 +21,14 @@ function  base64(req, res, next) {
 	function encrypt(value) {
 		let buffer = new Buffer(value);
 		let result = buffer.toString('base64');
-		let jsonInfo = {"source":value,"method":'encrypt',"cipher":result};
+		let jsonInfo = {"source":value,"method":'encrypt',"result":result};
 		let info = global.funcs.jsonInfo(200, "成功", jsonInfo);
 		res.send(info);
 	}
 	function decrypted(value) {
 		var buffer = new Buffer(value, 'base64')
 		let result = buffer.toString('utf-8');
-		let jsonInfo = {"source":result,"method":'decrypted',"cipher":value};
+		let jsonInfo = {"source":value,"method":'decrypted',"result":result};
 		let info = global.funcs.jsonInfo(200, "成功", jsonInfo);
 		res.send(info);
 	}
