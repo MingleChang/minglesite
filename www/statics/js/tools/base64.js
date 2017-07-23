@@ -17,7 +17,7 @@ app.config(['$locationProvider', function($locationProvider) {
 app.controller('base64', function($http,$scope) {
 	$scope.encrypt = encrypt;
 	$scope.decrypted = decrypted;
-
+	$scope.clear = clear;
 	function encrypt() {
 		encryptOrDecrypted($scope.sourceText, 'encrypt', function (result) {
 			$scope.encryptText = result;
@@ -29,6 +29,12 @@ app.controller('base64', function($http,$scope) {
 			$scope.sourceText = result;
 		});
 	}
+
+	function clear() {
+		$scope.sourceText = '';
+		$scope.encryptText = '';
+	}
+
 
 	function encryptOrDecrypted(value, method, callback) {
 		let url = "http://api.minglechang.com/tools/base64";

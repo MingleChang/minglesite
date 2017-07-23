@@ -36,6 +36,16 @@
 	font-size: 12px;
 }
 
+#clearButtonDiv {
+	margin-top: 5px;
+}
+
+#clearButton {
+	border-color: #7AB8CC;
+	color: #7AB8CC;
+	width: 100%;
+}
+
 #introBg {
 	margin-top: 20px;
 }

@@ -40,7 +40,12 @@ app.controller('hashEncrypt', function($http,$scope) {
 		}else {
 			encrypt($scope.sourceText, item.method);
 		}
-	}
+	};
+
+	$scope.clear = function () {
+		$scope.sourceText = '';
+		$scope.encryptText = '';
+	};	
 
 	function encrypt(source,method,password) {
 		if (!source) {

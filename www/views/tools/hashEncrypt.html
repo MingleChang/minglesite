@@ -51,7 +51,13 @@
             <div id="encryptButtonDiv" ng-repeat="encrypt in encrypts" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
                 <a id="encryptButton" class="btn" type="button" ng-click="buttonClick(encrypt)">{{encrypt.name}}</a>
             </div>
+            
+
+            <div id="clearButtonDiv" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+                <a id="clearButton" class="btn" type="button" ng-click="clear()">清空结果</a>
+            </div>
         </div>
+
         
     </div>
 
