@@ -30,3 +30,19 @@
 	color: white;
 	width: 100%;
 }
+
+#introBg {
+	margin-top: 20px;
+}
+
+#introTitle {
+	margin-top: 10px;
+	font-size: 24px;
+	color: #7AB8CC;
+}
+
+#introContent {
+	margin-top: 20px;
+	font-size: 15px;
+	color: #999999;
+}
