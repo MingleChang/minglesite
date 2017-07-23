@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MingleChang</title>
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <link rel="stylesheet" href="/public/css/common.css">
+    <link rel="stylesheet" href="/public/css/tools/base64.css">
+
+</head>
+<body>
+    <div ng-include="'/public/html/header.html'"></div>
+
+    <div id="headBg">
+        <div id="headTitle" class="container">工具 - base64</div>
+    </div>
+    <!-- 输入框 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <textarea id="sourceText" placeholder="Base64加密内容粘贴在这里" ng-model="sourceText"></textarea> 
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <textarea id="encryptText" placeholder="Base64解密内容粘贴在这里" ng-model="encryptText"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div ng-include="'/public/html/footer.html'"></div> 
+
+</body>
+</html>

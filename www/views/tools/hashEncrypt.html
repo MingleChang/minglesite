@@ -28,6 +28,7 @@
         <div id="headTitle" class="container">工具 - 散列/哈希</div>
     </div>
 
+    <!-- 输入框 -->
     <div class="container">
         <div id="textBg" class="row">
         <div  class="col-xs-12 col-sm-6">
@@ -40,9 +41,11 @@
         </div>
         </div>
     </div>
+    <!-- 密码输入 -->
     <div class="container" ng-show="visible">
         <span>密码：</span><input ng-model='password'>
     </div>
+    <!-- 按钮 -->
     <div class="container">
         <div id="buttonBg" class="row">
             <div id="encryptButtonDiv" ng-repeat="encrypt in encrypts" class="col-xs-4 col-sm-3 col-md-3 col-lg-2">

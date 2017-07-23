@@ -1,0 +1,17 @@
+#headBg {
+	background-color: #7AB8CC;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#headTitle {
+	font-size: 30px;
+	color: white;
+}
+
+#sourceText,#encryptText {
+	margin-top: 5px;
+	resize: none;
+	width: 100%;
+	height: 100px;
+}
