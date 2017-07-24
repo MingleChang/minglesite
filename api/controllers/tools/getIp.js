@@ -15,6 +15,8 @@ function getIp(req, res, next) {
 			let info = global.funcs.jsonInfo(200, "成功", jsonObject.data);
 			res.send(info);
 		} else {
+			let err = new Error('服务异常');
+			err.status = 400;
 			next(err);
 		}
 	});
