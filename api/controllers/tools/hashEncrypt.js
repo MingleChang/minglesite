@@ -5,9 +5,9 @@ method:加密方式
 password：密码(可选,如果传入了password则认为是hmac)
 */
 function  hashEncrypt(req, res, next) {
-	let source = req.query.source;
-	let method = req.query.method;
-	let password = req.query.password;
+	let source = req.query.source || req.body.source;
+	let method = req.query.method || req.body.source;
+	let password = req.query.password || req.body.source;
 	if (!source) {
 		let err = new Error('明文不能为空');
 		err.status = 400;
