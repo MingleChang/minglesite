@@ -38,9 +38,9 @@ app.controller('base64', function($http,$scope) {
 
 	function encryptOrDecrypted(value, method, callback) {
 		let url = "http://api.minglechang.com/tools/base64";
-		url = url + '?value=' + value;
-		url = url + '&method=' + method;
-		$http.get(url).then (
+		let params = {value:value, method:method};
+		let request = {method:'POST',url:url,params:params};
+		$http(request).then (
             	function successCallback(response) {
             		if (response.data.code == 200) {
             			callback(response.data.result.result);

@@ -4,8 +4,8 @@ method:加密还是解密（encrypt：加密   decrypted：解密）
 */
 
 function  base64(req, res, next) {
-	let value = req.query.value || req.body.value;
-	let method = req.query.method || req.body.method;
+	let value = req.body.value;
+	let method = req.body.method;
 	if (!value) {
 		errorFunc('value不能为空');
 		return;
