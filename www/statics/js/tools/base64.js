@@ -7,6 +7,7 @@ app.config(['$locationProvider', function($locationProvider) {
 }]);
 
 app.config(function ($httpProvider) {
+	// $httpProvider.defaults.headers.post = {'Content-Type': 'application/json; charset=UTF-8'};
     $httpProvider.defaults.transformRequest = function(data){
         if (data === undefined) {
             return data;
