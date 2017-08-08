@@ -75,23 +75,5 @@ app.controller('hashEncrypt', function($http,$scope) {
 				alert("服务器异常");
 			}
 		);
-		
-		// url = url + '?source=' + source;
-		// url = url + '&method=' + method;
-		// if (password != undefined) {
-		// 	url = url + '&password=' + password;
-		// }
-		// $http.get(url).then(
-  //           	function successCallback(response) {
-  //           		if (response.data.code == 200) {
-  //           			$scope.encryptText = response.data.result.result;
-  //           		}else {
-  //           			alert("服务器异常");
-  //           		}
-  // 				}, 
-  // 				function errorCallback(response) {
-		// 			alert("服务器异常");
-  // 				}
-  // 			);
 	}
 });
