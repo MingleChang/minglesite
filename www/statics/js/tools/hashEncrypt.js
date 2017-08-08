@@ -5,15 +5,16 @@ app.config(['$locationProvider', function($locationProvider) {
       	requireBase: false
     });
 }]);
-// app.config(['$sceDelegateProvider', function ($sceDelegateProvider) {
-// 	$sceDelegateProvider.resourceUrlWhitelist([
-// 		'self',
-// 		'http://api.minglechang.com/**'
-// 		]);
-// }]);
-// app.config(['$qProvider', function ($qProvider) {
-//     $qProvider.errorOnUnhandledRejections(false);
-// }]);
+
+app.config(function ($httpProvider) {
+    $httpProvider.defaults.transformRequest = function(data){
+        if (data === undefined) {
+            return data;
+        }
+        return $.param(data);
+    }
+});
+
 app.controller('hashEncrypt', function($http,$scope) {
 	$scope.visible = false;
 
@@ -52,23 +53,45 @@ app.controller('hashEncrypt', function($http,$scope) {
 			alert("请输入明文");
 			return;
 		}
-		var url = "http://api.minglechang.com/tools/hashEncrypt";
-		url = url + '?source=' + source;
-		url = url + '&method=' + method;
+		let url = "http://api.minglechang.com/tools/hashEncrypt";
+		let params = {source:source, method:method};
 		if (password != undefined) {
-			url = url + '&password=' + password;
+			params.password = password;
 		}
-		$http.get(url).then(
-            	function successCallback(response) {
-            		if (response.data.code == 200) {
-            			$scope.encryptText = response.data.result.result;
-            		}else {
-            			alert("服务器异常");
-            		}
-  				}, 
-  				function errorCallback(response) {
+		let request = {method:'POST',
+						url:url,
+						headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
+						data:params};
+
+		$http(request).then (
+			function successCallback(response) {
+				if (response.data.code == 200) {
+					$scope.encryptText = response.data.result.result;
+				}else {
 					alert("服务器异常");
-  				}
-  			);
+				}
+			}, 
+			function errorCallback(response) {
+				alert("服务器异常");
+			}
+		);
+		
+		// url = url + '?source=' + source;
+		// url = url + '&method=' + method;
+		// if (password != undefined) {
+		// 	url = url + '&password=' + password;
+		// }
+		// $http.get(url).then(
+  //           	function successCallback(response) {
+  //           		if (response.data.code == 200) {
+  //           			$scope.encryptText = response.data.result.result;
+  //           		}else {
+  //           			alert("服务器异常");
+  //           		}
+  // 				}, 
+  // 				function errorCallback(response) {
+		// 			alert("服务器异常");
+  // 				}
+  // 			);
 	}
 });

@@ -5,15 +5,16 @@ app.config(['$locationProvider', function($locationProvider) {
       	requireBase: false
     });
 }]);
-// app.config(['$sceDelegateProvider', function ($sceDelegateProvider) {
-// 	$sceDelegateProvider.resourceUrlWhitelist([
-// 		'self',
-// 		'http://api.minglechang.com/**'
-// 		]);
-// }]);
-// app.config(['$qProvider', function ($qProvider) {
-//     $qProvider.errorOnUnhandledRejections(false);
-// }]);
+
+app.config(function ($httpProvider) {
+    $httpProvider.defaults.transformRequest = function(data){
+        if (data === undefined) {
+            return data;
+        }
+        return $.param(data);
+    }
+});
+
 app.controller('base64', function($http,$scope) {
 	$scope.encrypt = encrypt;
 	$scope.decrypted = decrypted;
@@ -40,21 +41,23 @@ app.controller('base64', function($http,$scope) {
 		let url = "http://api.minglechang.com/tools/base64";
 
 		let params = {value:value, method:method};
+		// params = JSON.stringify(params);
 		let request = {method:'POST',
 						url:url,
-						params:params};
+						headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'},
+						data:params};
 
 		$http(request).then (
-            	function successCallback(response) {
-            		if (response.data.code == 200) {
-            			callback(response.data.result.result);
-            		}else {
-            			alert("服务器异常");
-            		}
-  				}, 
-  				function errorCallback(response) {
+			function successCallback(response) {
+				if (response.data.code == 200) {
+					callback(response.data.result.result);
+				}else {
 					alert("服务器异常");
-  				}
-  			);
+				}
+			}, 
+			function errorCallback(response) {
+				alert("服务器异常");
+			}
+		);
 	}
 });
