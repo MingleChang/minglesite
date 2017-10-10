@@ -1,5 +1,5 @@
 function index(req, res, next) {
-	res.render('help');
+	res.render('index/index');
 }
 
 module.exports = index;
