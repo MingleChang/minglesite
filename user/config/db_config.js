@@ -11,7 +11,7 @@ const db_config = {
 		host: '127.0.0.1',
 		username: 'root',
 		password: '890805',
-		database: 'minglechang',
+		database: 'mc_user',
 		dialect: 'mysql'
 	}
 };
