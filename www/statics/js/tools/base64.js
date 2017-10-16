@@ -39,7 +39,7 @@ app.controller('base64', function($http,$scope) {
 
 
 	function encryptOrDecrypted(value, method, callback) {
-		let url = "http://api.minglechang.com/tools/base64";
+		let url = "https://api.minglechang.com/tools/base64";
 
 		let params = {value:value, method:method};
 		// params = JSON.stringify(params);

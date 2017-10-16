@@ -53,7 +53,7 @@ app.controller('hashEncrypt', function($http,$scope) {
 			alert("请输入明文");
 			return;
 		}
-		let url = "http://api.minglechang.com/tools/hashEncrypt";
+		let url = "https://api.minglechang.com/tools/hashEncrypt";
 		let params = {source:source, method:method};
 		if (password != undefined) {
 			params.password = password;
